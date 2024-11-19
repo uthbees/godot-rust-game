@@ -13,4 +13,8 @@ unwrap_used = "deny"
 missing_panics_doc = "allow"
 missing_errors_doc = "allow"
 
+[lib]
+crate-type = ["cdylib"]
+
 [dependencies]
+godot = "0.2.0"
