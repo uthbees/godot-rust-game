@@ -12,6 +12,7 @@ pedantic = { level = "warn", priority = -1 }
 unwrap_used = "deny"
 missing_panics_doc = "allow"
 missing_errors_doc = "allow"
+cast_possible_truncation = "allow"
 
 [lib]
 crate-type = ["cdylib"]

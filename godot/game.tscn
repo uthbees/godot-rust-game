@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://di6gfh6smjx1q"]
+
+[ext_resource type="PackedScene" uid="uid://bmf0kq5oqfc4m" path="res://player.tscn" id="1_dp8k8"]
+[ext_resource type="Texture2D" uid="uid://dh0en41sqrc0q" path="res://img/background-tile.png" id="2_g3r4n"]
+[ext_resource type="PackedScene" uid="uid://c7gvd0mua4ft5" path="res://tile.tscn" id="3_ucrlk"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_g3r4n")
+expand_mode = 3
+stretch_mode = 1
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="Tile" parent="Tiles" instance=ExtResource("3_ucrlk")]
+position = Vector2(64, 584)
+
+[node name="Tile2" parent="Tiles" instance=ExtResource("3_ucrlk")]
+position = Vector2(192, 584)
+
+[node name="Tile3" parent="Tiles" instance=ExtResource("3_ucrlk")]
+position = Vector2(320, 584)
+
+[node name="Tile4" parent="Tiles" instance=ExtResource("3_ucrlk")]
+position = Vector2(448, 584)
+
+[node name="Tile5" parent="Tiles" instance=ExtResource("3_ucrlk")]
+position = Vector2(576, 584)
+
+[node name="Tile6" parent="Tiles" instance=ExtResource("3_ucrlk")]
+position = Vector2(704, 584)
+
+[node name="Tile7" parent="Tiles" instance=ExtResource("3_ucrlk")]
+position = Vector2(832, 584)
+
+[node name="Tile8" parent="Tiles" instance=ExtResource("3_ucrlk")]
+position = Vector2(960, 584)
+
+[node name="Tile9" parent="Tiles" instance=ExtResource("3_ucrlk")]
+position = Vector2(1088, 584)
+
+[node name="Tile10" parent="Tiles" instance=ExtResource("3_ucrlk")]
+position = Vector2(899, 292)
+
+[node name="Tile11" parent="Tiles" instance=ExtResource("3_ucrlk")]
+position = Vector2(261, 231)
+
+[node name="Player" parent="." instance=ExtResource("1_dp8k8")]
