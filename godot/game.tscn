@@ -1,51 +1,120 @@
-[gd_scene load_steps=4 format=3 uid="uid://di6gfh6smjx1q"]
+[gd_scene load_steps=6 format=4 uid="uid://di6gfh6smjx1q"]
 
 [ext_resource type="PackedScene" uid="uid://bmf0kq5oqfc4m" path="res://player.tscn" id="1_dp8k8"]
 [ext_resource type="Texture2D" uid="uid://dh0en41sqrc0q" path="res://img/background-tile.png" id="2_g3r4n"]
-[ext_resource type="PackedScene" uid="uid://c7gvd0mua4ft5" path="res://tile.tscn" id="3_ucrlk"]
+[ext_resource type="Texture2D" uid="uid://c86hnae0a6oe4" path="res://img/tile.png" id="4_o0d7s"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gtpbd"]
+texture = ExtResource("4_o0d7s")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+0:0/0/terrains_peering_bit/bottom_left_corner = 0
+0:0/0/terrains_peering_bit/left_side = 0
+0:0/0/terrains_peering_bit/top_left_corner = 0
+0:0/0/terrains_peering_bit/top_side = 0
+0:0/0/terrains_peering_bit/top_right_corner = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/next_alternative_id = 2
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pop0a"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Blocks"
+terrain_set_0/terrain_0/color = Color(0.345003, 0.29468, 0.765108, 1)
+sources/0 = SubResource("TileSetAtlasSource_gtpbd")
 
 [node name="Game" type="Node2D"]
 
-[node name="Background" type="TextureRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+[node name="Background" type="Parallax2D" parent="."]
+repeat_size = Vector2(256, 256)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(579, 382)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_g3r4n")
-expand_mode = 3
-stretch_mode = 1
 
-[node name="Tiles" type="Node2D" parent="."]
+[node name="TileMap" type="Node2D" parent="."]
 
-[node name="Tile" parent="Tiles" instance=ExtResource("3_ucrlk")]
-position = Vector2(64, 584)
-
-[node name="Tile2" parent="Tiles" instance=ExtResource("3_ucrlk")]
-position = Vector2(192, 584)
-
-[node name="Tile3" parent="Tiles" instance=ExtResource("3_ucrlk")]
-position = Vector2(320, 584)
-
-[node name="Tile4" parent="Tiles" instance=ExtResource("3_ucrlk")]
-position = Vector2(448, 584)
-
-[node name="Tile5" parent="Tiles" instance=ExtResource("3_ucrlk")]
-position = Vector2(576, 584)
-
-[node name="Tile6" parent="Tiles" instance=ExtResource("3_ucrlk")]
-position = Vector2(704, 584)
-
-[node name="Tile7" parent="Tiles" instance=ExtResource("3_ucrlk")]
-position = Vector2(832, 584)
-
-[node name="Tile8" parent="Tiles" instance=ExtResource("3_ucrlk")]
-position = Vector2(960, 584)
-
-[node name="Tile9" parent="Tiles" instance=ExtResource("3_ucrlk")]
-position = Vector2(1088, 584)
-
-[node name="Tile10" parent="Tiles" instance=ExtResource("3_ucrlk")]
-position = Vector2(899, 292)
-
-[node name="Tile11" parent="Tiles" instance=ExtResource("3_ucrlk")]
-position = Vector2(261, 231)
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAGAAwAAAAAAAAAAAAGAA0AAAAAAAAAAAAGAA4AAAAAAAAAAAAGAA8AAAAAAAAAAAAHAA8AAAAAAAAAAAAHABAAAAAAAAAAAAAHABEAAAAAAAAAAAAHABIAAAAAAAAAAAAIABIAAAAAAAAAAAAIABMAAAAAAAAAAAAIABQAAAAAAAAAAAAIABUAAAAAAAAAAAAJABUAAAAAAAAAAAAKABUAAAAAAAAAAAAKABQAAAAAAAAAAAAKABMAAAAAAAAAAAAKABIAAAAAAAAAAAALABIAAAAAAAAAAAALABEAAAAAAAAAAAALABAAAAAAAAAAAAALAA8AAAAAAAAAAAAMAA8AAAAAAAAAAAAMAA4AAAAAAAAAAAAMAA0AAAAAAAAAAAAMAAwAAAAAAAAAAAD+/wUAAAAAAAAAAAD8/wYAAAAAAAAAAAD6/wUAAAAAAAAAAAD4/wYAAAAAAAAAAAD1/wUAAAAAAAAAAADy/wYAAAAAAAAAAADv/wUAAAAAAAAAAADs/wYAAAAAAAAAAADq/wQAAAAAAAAAAADp/wQAAAAAAAAAAADp/wMAAAAAAAAAAADp/wIAAAAAAAAAAADq/wIAAAAAAAAAAADo/wIAAAAAAAAAAADn/wIAAAAAAAAAAADm/wIAAAAAAAAAAADl/wIAAAAAAAAAAADk/wIAAAAAAAAAAADm/wEAAAAAAAAAAADl/wEAAAAAAAAAAADl/wAAAAAAAAAAAADl////AAAAAAAAAADi//3/AAAAAAAAAADd//v/AAAAAAAAAADW//n/AAAAAAAAAADW//r/AAAAAAAAAADW//v/AAAAAAAAAADW//z/AAAAAAAAAADW//3/AAAAAAAAAADW//7/AAAAAAAAAADW////AAAAAAAAAADW/wAAAAAAAAAAAADW/wEAAAAAAAAAAADW/wIAAAAAAAAAAADW/wMAAAAAAAAAAADW/wQAAAAAAAAAAADW/wUAAAAAAAAAAADW/wYAAAAAAAAAAADW/wcAAAAAAAAAAADW/wgAAAAAAAAAAADW/wkAAAAAAAAAAADV/wkAAAAAAAAAAADU/wkAAAAAAAAAAADU/wgAAAAAAAAAAADU/wcAAAAAAAAAAADU/wYAAAAAAAAAAADU/wUAAAAAAAAAAADU/wQAAAAAAAAAAADU/wMAAAAAAAAAAADU/wIAAAAAAAAAAADU/wEAAAAAAAAAAADU/wAAAAAAAAAAAADU////AAAAAAAAAADU//7/AAAAAAAAAADU//3/AAAAAAAAAADU//z/AAAAAAAAAADU//v/AAAAAAAAAADU//r/AAAAAAAAAADU//n/AAAAAAAAAADU//b/AAAAAAAAAADU//f/AAAAAAAAAADU//j/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_pop0a")
 
 [node name="Player" parent="." instance=ExtResource("1_dp8k8")]
+gravity = 4000.0
+max_horizontal_speed = 1000.0
+jump_speed = 1200.0
+ground_friction_factor = 0.25
+air_friction_factor = 0.11
+acceleration_factor = 0.06
+position = Vector2(549, 297)
