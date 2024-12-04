@@ -12,7 +12,7 @@ Steps to build and/or run the software:
 
 1. Install Rust: https://rustup.rs/
 2. Install Godot: https://godotengine.org/download
-3. Compile the Rust extension with `cargo build`
+3. Compile the Rust extension with `cargo build` (run within the rust directory)
 4. Open the Godot project in the Godot editor
 5. Press the run button in the top right corner
 
